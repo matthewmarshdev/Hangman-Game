@@ -1,0 +1,47 @@
+body {
+	background-color: #252525;
+}
+
+section {
+	color: white;
+	border-style: dotted;
+	border-width: 5px;
+	border-color: white;
+	margin: auto;
+
+
+}
+
+header{
+	color: white;
+	text-align: center;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+	color: lightblue;
+	text-align: center;
+	height: 45px;
+	width: 100%;
+	background color: green;
+}
+
+.sectionL {
+
+	float: left;
+
+}
+.sectionR {
+
+	float: left;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+#headliner{
+	position: static;
+	margin-top: 20px;
+}
