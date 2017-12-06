@@ -2,10 +2,10 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link rel="stylesheet" href=assets/css/reset.css ">
     <meta charset="ISO-8859-1 ">
     <meta name="viewport " content="width=device-width, initial-scale=1 ">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href=assets/css/reset.css ">
     <link rel="stylesheet " type="text/css " href="assets/css/style.css ">
     <script type="text/javascript " src="assets/javascript/game.js "></script>
 	<title>Hangman Game HTML</title>
@@ -25,88 +25,76 @@
 		
 	<div class="container ">
 		<div class="row ">
-
-
-			<div class="col-md-6 col-sm-12 ">
+         	<div class="col-md-6 col-sm-12 ">
 	            <section class="sectionL ">
-		         <h2>Show Me What You Got!</h2>
-		         <div class='DisplayMeme'></div>
-	            </section>
+			        <h2>Show Me What You Got!</h2>
+			        <div class='DisplayMeme'></div>
+		        </section>
 		    </div>
+
+			
 
 
             <div class="col-md-6 col-sm-12 ">
             	<section class="sectionR ">
-            		<div class="row">
+            		<div class="row ">
 
-            			<div class="col-sm-12">
+            			<div class="col-sm-12 ">
 		         			<h2>Start Here</h2>
 		         			
 
-      						  <div class="hangman-controls">
-        							<button class="btn1 btn-primary new">
+      						  <div class="hangman-controls ">
+        							<button class="btn1 btn-primary new ">
  				  					New Game
 									</button>
-									<button class="btn1 btn-warning reset">Reset
+									<button class="btn1 btn-warning reset ">Reset
 									</button>
 							  </div>
 						</div>
 
-						<div class="row" id="selector"></div>
-						<div class="col-sm-12">
-								<div class="letter-button">A</div>
-       							 <div class="letter-button">B</div>
-       							<div class="letter-button">C</div>
-      							<div class="letter-button">D</div>
-       							<div class="letter-button">E</div>
-      							<div class="letter-button">F</div>
-      							<div class="letter-button">G</div>
-     							<div class="letter-button">H</div>
-       							<div class="letter-button">I</div>
-      							<div class="letter-button">J</div>
-      							<div class="letter-button">K</div>
-      							<div class="letter-button">L</div>
-      							<div class="letter-button">M</div>
-       							<div class="letter-button">N</div>
-       							<div class="letter-button">O</div>
-       							<div class="letter-button">P</div>
-        						<div class="letter-button">Q</div>
-       							<div class="letter-button">R</div>
-        						<div class="letter-button">S</div>
-       							<div class="letter-button">T</div>
-        						<div class="letter-button">U</div>
-        						<div class="letter-button">V</div>
-        						<div class="letter-button">W</div>
-       							<div class="letter-button">X</div>
-     							<div class="letter-button">Y</div>
-    							<div class="letter-button">Z</div>
+						<div class="row " id="selector "></div>
+						<div id="alphabet-keypad " class="col-sm-12 ">
+								<div class="letter-button ">A</div>
+       							 <div class="letter-button ">B</div>
+       							<div class="letter-button ">C</div>
+      							<div class="letter-button ">D</div>
+       							<div class="letter-button ">E</div>
+      							<div class="letter-button ">F</div>
+      							<div class="letter-button ">G</div>
+     							<div class="letter-button ">H</div>
+       							<div class="letter-button ">I</div>
+      							<div class="letter-button ">J</div>
+      							<div class="letter-button ">K</div>
+      							<div class="letter-button ">L</div>
+      							<div class="letter-button ">M</div>
+       							<div class="letter-button ">N</div>
+       							<div class="letter-button ">O</div>
+       							<div class="letter-button ">P</div>
+        						<div class="letter-button ">Q</div>
+       							<div class="letter-button ">R</div>
+        						<div class="letter-button ">S</div>
+       							<div class="letter-button ">T</div>
+        						<div class="letter-button ">U</div>
+        						<div class="letter-button ">V</div>
+        						<div class="letter-button ">W</div>
+       							<div class="letter-button ">X</div>
+     							<div class="letter-button ">Y</div>
+    							<div class="letter-button ">Z</div>
 						</div>	  
 						</div>
 
 
-						<div class="row">
-						<div class="col-sm-12">
-								<div id="letter-graveyard">
-        						<img id="imggraveyard" src="assets/images/gravestone.jpg">
+						<div class="row ">
+						<div class="col-sm-12 ">
+								<div id="letter-graveyard ">
+        						<img id="imggraveyard " src="assets/images/gravestone.jpg ">
+        								<h2> Letter Graveyard </h2>
       							</div>
       					</div>
       					</div>	
-
-
-		         	</div>
-
+					</div>
 	           	</section>
-
 			</div>
-
-
-
-		       </div>
-
-
-
-
-
 	    </div>
 	</div>
 <div class="container-fluid ">

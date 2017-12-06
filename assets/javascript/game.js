@@ -1,14 +1,7 @@
 
-//--------------------------------------------------------------------------------**/
-
-
-$(document).ready(function())
-
-    
-
-
-	words   = ['rickroll', 'nyancat', 'orly', 'feelsbadman', 'joebiden',
-	 'rick_sanchez', 'trump'];
+//--------------------------------------------------------------------------------**/	
+	words  = ['rickroll', 'nyancat', 'orly', 'feelsbadman', 'joebiden',
+			 'rick_sanchez', 'trump'];
 
 
 
@@ -22,7 +15,7 @@ $(document).ready(function())
 	};
 
 
-
+		
 
 
 //-----------------------------------------------------------------------------//
