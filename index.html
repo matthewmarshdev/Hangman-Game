@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href=assets/css/reset.css ">
     <meta charset="ISO-8859-1 ">
     <meta name="viewport " content="width=device-width, initial-scale=1 ">
@@ -13,28 +14,107 @@
 
 <body>
 
+
+<div class="container-fluid ">
 	<header>
 		<img id="headliner " src="assets/images/Headliner.png " alt="Liner ">
 		
 	</header>
+</div>
 
-	<div>
-	<section class="sectionL ">
-		<h2>Show Me What You Got!</h2>
-	</section>
+		
+	<div class="container ">
+		<div class="row ">
 
-	<section class="sectionR clearfix ">
-		<h2>Start Here</h2>
-		<button class="btn1 ">New Game</button>
-		<div>
-			<p id="demo "></p>
-		</div>
-	</section>
+
+			<div class="col-md-6 col-sm-12 ">
+	            <section class="sectionL ">
+		         <h2>Show Me What You Got!</h2>
+		         <div class='DisplayMeme'></div>
+	            </section>
+		    </div>
+
+
+            <div class="col-md-6 col-sm-12 ">
+            	<section class="sectionR ">
+            		<div class="row">
+
+            			<div class="col-sm-12">
+		         			<h2>Start Here</h2>
+		         			
+
+      						  <div class="hangman-controls">
+        							<button class="btn1 btn-primary new">
+ 				  					New Game
+									</button>
+									<button class="btn1 btn-warning reset">Reset
+									</button>
+							  </div>
+						</div>
+
+						<div class="row" id="selector"></div>
+						<div class="col-sm-12">
+								<div class="letter-button">A</div>
+       							 <div class="letter-button">B</div>
+       							<div class="letter-button">C</div>
+      							<div class="letter-button">D</div>
+       							<div class="letter-button">E</div>
+      							<div class="letter-button">F</div>
+      							<div class="letter-button">G</div>
+     							<div class="letter-button">H</div>
+       							<div class="letter-button">I</div>
+      							<div class="letter-button">J</div>
+      							<div class="letter-button">K</div>
+      							<div class="letter-button">L</div>
+      							<div class="letter-button">M</div>
+       							<div class="letter-button">N</div>
+       							<div class="letter-button">O</div>
+       							<div class="letter-button">P</div>
+        						<div class="letter-button">Q</div>
+       							<div class="letter-button">R</div>
+        						<div class="letter-button">S</div>
+       							<div class="letter-button">T</div>
+        						<div class="letter-button">U</div>
+        						<div class="letter-button">V</div>
+        						<div class="letter-button">W</div>
+       							<div class="letter-button">X</div>
+     							<div class="letter-button">Y</div>
+    							<div class="letter-button">Z</div>
+						</div>	  
+						</div>
+
+
+						<div class="row">
+						<div class="col-sm-12">
+								<div id="letter-graveyard">
+        						<img id="imggraveyard" src="assets/images/gravestone.jpg">
+      							</div>
+      					</div>
+      					</div>	
+
+
+		         	</div>
+
+	           	</section>
+
+			</div>
+
+
+
+		       </div>
+
+
+
+
+
+	    </div>
 	</div>
-
+<div class="container-fluid ">
 	<footer class=" ">
-		<p> copyright matthew marsh</p>
+		<p class="footertext "> copyright matthew marsh</p>
 	</footer>
+</div>
+
 
 </body>
 </html>
