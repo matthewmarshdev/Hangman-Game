@@ -4,19 +4,45 @@
 			 'rick_sanchez', 'trump'];
 
 
-
-	letters = "abcdefghijklmnopqurtuvwxyz";
+    //preset variables
+	letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','u','r','t','u','v','w','x','y','z',];
 	guesses = 7;
 	messages = {
 		win: 'Prepare for MEME! Nice win bruh',
 		lose: 'No meme for u bruh. google it',
 		guessed: 'Already did that one. You ok?',
-		valid: 'Pick a letter. Just dont pick Z.'
+		valid: 'Pick a letter. Just dont pick Z.',
 	};
 
+    // This function is run whenever the user presses a key.
+    document.onkeyup = function(event) {
 
-		
+    // Determines which key was pressed.
+    var userGuess = event.key;
 
+      if (userGuess = "a") {
+
+        // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
+        var html =
+          "<p>You chose: " + userGuess + "</p>" +
+          "<p>The computer chose: " + computerGuess + "</p>" +
+          "<p>wins: " + wins + "</p>" +
+          "<p>losses: " + losses + "</p>" +
+          "<p>ties: " + ties + "</p>";
+
+        // Set the inner HTML contents of the #game div to our html string
+        document.querySelector("#game").innerHTML = html;
+      }	
+
+      for (var p = 0; p < words.length; p++ ){
+        var item = words[Math.floor(Math.random()*words.length)];
+
+      }
+
+    function myFunction() {
+    document.getElementById("CorrectGuess").innerHTML ='xx';
+}
+}
 
 //-----------------------------------------------------------------------------//
 //start the game, let the computer choose the word 

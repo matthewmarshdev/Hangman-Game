@@ -141,10 +141,13 @@ footer {
     text-align: center;
 }
 
-#letter-graveyard img {
-    max-width: 100%;
+
+
+#graveimg{
+    width: 100%;
 }
 
-#imggraveyard{
-    width: 100%;
+#correctguess{
+    font-size: 24px;
+    color: white;
 }
