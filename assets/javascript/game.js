@@ -5,7 +5,12 @@
     //place to set global variables
 
 	var wordArray  = ['rickroll', 'nyancat', 'orly', 'feelsbadman', 'joebiden',
-			 'rick_sanchez', 'trump'];
+			 'ricksanchez', 'trump'];
+    var hints = ["never gonna give you up", "inspiration for nyanborghini", 
+        "the most-curious owl", "always feels the worst", "best vice-p on earth", 
+        "alcoholic scientist grandpa", "orange ape, wrote art of the deal.",
+        
+       ];
 
 	//var letters = ['a','b','c','d','e','f','g','h','i','j','k',
 	//				'l','m','n','o','p','q','u','r','t','u','v',
@@ -15,10 +20,12 @@
 	var word = wordArray[Math.floor(Math.random() * wordArray.length)];
 
     //place to set global variables
-    var set;
+    var set;                              
     var count = 0;
-    var lives ;             // Lives
+    var lives ;                           // Lives
 	var answerArray = [];
+    var remainingLetters = word.length;
+    var getHint = document.getElementById("hint");
 
     //this is the function for starting the game. it selects the word,
     //joins the empty array with the word length and 
@@ -67,46 +74,24 @@
 
 
     //This function is for showing a hint. it aligns with the index of the chosen word,
-    //and binds to it. 
-
-      // Hint
-
-    hint.onclick = function() {
-
-      hints = [
-        ["Based in Mersyside", "Based in Mersyside", 
-        "First Welsh team to reach the Premier Leauge", 
-        "Owned by A russian Billionaire", "Once managed by Phil Brown", 
-        "2013 FA Cup runners up", "Gazza's first club",
-        "Science-Fiction horror film", "1971 American action film", 
-        "Historical drama", "Anamated Fish", "Giant great white shark",
-        "Northern city in the UK", "Home of AC and Inter", 
-        "Spanish capital", "Netherlands capital",
-         "Czech Republic capital"]
-    ];
-
-   
-    var hintIndex = wordArray.indexOf();
-    showClue.innerHTML = "Clue: - " +  hints[hintIndex];
-  };
+    /**and binds to it. 
+    hint.onclick = function(){
+        var hint = hints;
+        var hintIndex = wordArray.indexOf();
+        showClue.innerHTML = "Clue: - " +  hint[hintIndex];
+    };**/
 
 
-	var remainingLetters = word.length;
+	//This function resets the game when the reset button is clicked
+    document.getElementById('reset').onclick = function() {
+    correct.parentNode.removeChild(correct);
+    letters.parentNode.removeChild(letters);
+    showClue.innerHTML = "";
+    context.clearRect(0, 0, 400, 400);
+    play();
+    }
 
-	//document.getElementById("ba").addEventListener("click", myFunction);
-
-	//function myFunction() {
-    //document.getElementById("guessesLeft").innerHTML = "YOU CLICKED ME!";
-
-
-
-    //elements and set them to variables 
-    //while (remainingLetters > 0) {
-
-	//}
-
-    	//update answerArray and output 
-
+	
 
 
 
