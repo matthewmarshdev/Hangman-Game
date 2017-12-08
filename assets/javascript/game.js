@@ -1,5 +1,5 @@
 
-//--------------------------------------------------------------------------------**/	
+//--------------------------------------------------------------------------------
 	window.onload = function () {
 	var words  = ['rickroll', 'nyancat', 'orly', 'feelsbadman', 'joebiden',
 			 'rick_sanchez', 'trump'];
@@ -13,14 +13,17 @@
 		}
 	var remainingLetters = word.length;
 
+	//document.getElementById("ba").addEventListener("click", myFunction);
+
+	//function myFunction() {
+    //document.getElementById("guessesLeft").innerHTML = "YOU CLICKED ME!";
+
+
+
     //elements and set them to variables 
-    while (remainingLetters > 0) {
+    //while (remainingLetters > 0) {
 
-    	//document.getElementById("ba").addEventListener("click", myFunction);
-
-		//function myFunction() {
-    	//document.getElementById("guessesLeft").innerHTML = "YOU CLICKED ME!";
-	}
+	//}
 
     	//update answerArray and output 
 
