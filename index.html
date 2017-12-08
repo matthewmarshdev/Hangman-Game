@@ -14,6 +14,13 @@
 
 <body>
 
+	<!-- Game guide for input and output tags
+
+		outputs:
+		<div class='DisplayMeme'></div>
+
+	      -->
+
 
 <div class="container-fluid ">
 	<header>
@@ -31,7 +38,10 @@
 			        <div class='DisplayMeme'></div>
               		<div id="CorrectGuess "></div>
                     	
-
+					<div class="col-sm-12 ">
+							<p id="hiddenWord">Word Loads Here, Click New Game!</p>
+						</div>
+						
 					    
 		        </section>
 		    </div>
@@ -43,9 +53,8 @@
             	<section class="sectionR ">
             		<div class="row ">
 						<div class="col-sm-12 ">
-		         			<h2>Start Here</h2>
       						  <div>
-        							<button class="btn1 btn-primary new " id="newgame ">
+        							<button class="btn1 btn-primary new " id="newgame " onclick="startGame()">
  				  					New Game
 									</button>
 									<button class="btn1 btn-warning reset " id="reset ">Reset
@@ -56,66 +65,63 @@
 							  </div>
 						</div>
 
-						<div class="col-md-12 ">
-							<button id="ba " class="btn btn-danger number " value="a "><h1>A</h1></button>
+						<div class="col-md-12 letters ">
+							<button id="letter" class="btn btn-danger number " value="a "><h1>A</h1></button>
 
-			            	<button id="bb " class="btn btn-danger number " value="b "><h1>B</h1></button>
+			            	<button id="b " class="btn btn-danger number " value="b "><h1>B</h1></button>
 
-			            	<button id="bc " class="btn btn-danger number " value="c "><h1>C</h1></button>
+			            	<button id="c " class="btn btn-danger number " value="c "><h1>C</h1></button>
 
-			            	<button id="bd " class="btn btn-danger number " value="d "><h1>D</h1></button>
+			            	<button id="d " class="btn btn-danger number " value="d "><h1>D</h1></button>
 
-			            	<button id="be " class="btn btn-danger number " value="e "><h1>E</h1></button>
+			            	<button id="e " class="btn btn-danger number " value="e "><h1>E</h1></button>
 
-			            	<button id="bf " class="btn btn-danger number " value="f "><h1>F</h1></button>
+			            	<button id="f " class="btn btn-danger number " value="f "><h1>F</h1></button>
 
-			            	<button id="bg " class="btn btn-danger number " value="g "><h1>G</h1></button>
+			            	<button id="g " class="btn btn-danger number " value="g "><h1>G</h1></button>
 
-			            	<button id="bh " class="btn btn-danger number " value="h "><h1>H</h1></button>
+			            	<button id="h " class="btn btn-danger number " value="h "><h1>H</h1></button>
 
-			            	<button id="bi " class="btn btn-danger number " value="i "><h1>I</h1></button>
+			            	<button id="i " class="btn btn-danger number " value="i "><h1>I</h1></button>
 
-			            	<button id="bj " class="btn btn-danger number " value="j "><h1>J</h1></button>
+			            	<button id="j " class="btn btn-danger number " value="j "><h1>J</h1></button>
 
-			            	<button id="bk " class="btn btn-danger number " value="k "><h1>K</h1></button>
+			            	<button id="k " class="btn btn-danger number " value="k "><h1>K</h1></button>
 
-			            	<button id="bl " class="btn btn-danger number " value="l "><h1>L</h1></button>
+			            	<button id="l " class="btn btn-danger number " value="l "><h1>L</h1></button>
 
-			            	<button id="bm " class="btn btn-danger number " value="m "><h1>M</h1></button>
+			            	<button id="m " class="btn btn-danger number " value="m "><h1>M</h1></button>
 
-			            	<button id="bn " class="btn btn-danger number " value="n "><h1>N</h1></button>
+			            	<button id="n " class="btn btn-danger number " value="n "><h1>N</h1></button>
 
-			            	<button id="bo " class="btn btn-danger number " value="o "><h1>O</h1></button>
+			            	<button id="o " class="btn btn-danger number " value="o "><h1>O</h1></button>
 
-			            	<button id="bp " class="btn btn-danger number " value="p "><h1>P</h1></button>
+			            	<button id="p " class="btn btn-danger number " value="p "><h1>P</h1></button>
 
-			            	<button id="bq " class="btn btn-danger number " value="q "><h1>Q</h1></button>
+			            	<button id="q " class="btn btn-danger number " value="q "><h1>Q</h1></button>
 
-			            	<button id="br " class="btn btn-danger number " value="r "><h1>R</h1></button>
+			            	<button id="r " class="btn btn-danger number " value="r "><h1>R</h1></button>
 
-			            	<button id="bs " class="btn btn-danger number " value="s "><h1>S</h1></button>
+			            	<button id="s " class="btn btn-danger number " value="s "><h1>S</h1></button>
 
-			            	<button id="bt " class="btn btn-danger number " value="t "><h1>T</h1></button>
+			            	<button id="t " class="btn btn-danger number " value="t "><h1>T</h1></button>
 
-			            	<button id="bu " class="btn btn-danger number " value="u "><h1>U</h1></button>
+			            	<button id="q " class="btn btn-danger number " value="u "><h1>U</h1></button>
 
-			            	<button id="bv " class="btn btn-danger number " value="v "><h1>V</h1></button>
+			            	<button id="v " class="btn btn-danger number " value="v "><h1>V</h1></button>
 
-			            	<button id="bw " class="btn btn-danger number " value="w "><h1>W</h1></button>
+			            	<button id="w " class="btn btn-danger number " value="w "><h1>W</h1></button>
 
-			            	<button id="bx " class="btn btn-danger number " value="x "><h1>X</h1></button>
+			            	<button id="x " class="btn btn-danger number " value="x "><h1>X</h1></button>
 
-			            	<button id="by " class="btn btn-danger number " value="y "><h1>Y</h1></button>
+			            	<button id="y " class="btn btn-danger number " value="y "><h1>Y</h1></button>
 
-			            	<button id="bz " class="btn btn-danger number " value="z "><h1>Z</h1></button>
+			            	<button id="z " class="btn btn-danger number " value="z "><h1>Z</h1></button>
 						</div>
 
 
 						
-						<div class="col-sm-12 ">
-							<p id="guessesLeft ">Should be A</p>
-						</div>
-						
+			
 
 
 						
@@ -125,7 +131,7 @@
 							<div class="col-sm-12 ">
 									<div id="letter-graveyard ">
 	        						<img class="img-responsive " id="graveimg " src="assets/images/confused.jpg ">
-	        						<h2 id="room "> U dont Kno?! </h2>
+	        						<h2 id="room "> U dont Kno?! heres how many guesses you have left </h2>
 	      							</div>
 	      					</div>
       					</div>

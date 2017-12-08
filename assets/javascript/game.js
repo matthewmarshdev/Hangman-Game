@@ -1,16 +1,59 @@
 
 //--------------------------------------------------------------------------------
-	window.onload = function () {
-	var words  = ['rickroll', 'nyancat', 'orly', 'feelsbadman', 'joebiden',
+
+
+    //place to set global variables
+
+	var wordArray  = ['rickroll', 'nyancat', 'orly', 'feelsbadman', 'joebiden',
 			 'rick_sanchez', 'trump'];
-	var letters = ['a','b','c','d','e','f','g','h','i','j','k',
-					'l','m','n','o','p','q','u','r','t','u','v',
-					'w','x','y','z'];
-	var word = words[Math.floor(Math.random() * words.length)];
+
+	//var letters = ['a','b','c','d','e','f','g','h','i','j','k',
+	//				'l','m','n','o','p','q','u','r','t','u','v',
+	//				'w','x','y','z'];
+
+    //this array chooses a random word from above
+	var word = wordArray[Math.floor(Math.random() * wordArray.length)];
+
+    //place to set global variables
+    var set;
+    var count = 0;
 	var answerArray = [];
-		for (var i = 0; i < word.length; i++) {
+
+
+	function startGame(){
+
+        for (var i = 0; i < word.length; i++) {
     		answerArray[i] = "_";
 		}
+
+        set=answerArray.join(" ");
+        document.getElementById("hiddenWord").innerHTML = set;
+    }
+
+
+    function letter(){
+
+        var letter = document.getElementById("letter").value;
+            console.log(letter);
+        if(letter.length > 0){
+
+            for (var j = 0; j < randomWord.length; j++){
+
+                if (randomWord[j]=== letter){
+
+                    answerArray[j] = letter; 
+                }
+            }
+            count++
+            document.getElementById("counter").innerHTML = "No of clicks" + count;
+            document.getElementById("CorrectGuess").innerHTML = answerArray.join(" ")
+        }
+        if(count>5){
+            document.getElementById("room").innerHTML = "Sryssssly??";
+        }
+
+    }
+
 	var remainingLetters = word.length;
 
 	//document.getElementById("ba").addEventListener("click", myFunction);
@@ -26,9 +69,6 @@
 	//}
 
     	//update answerArray and output 
-
-
-	}
 
 
 
