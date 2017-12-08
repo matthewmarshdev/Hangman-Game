@@ -1,37 +1,36 @@
 
 //--------------------------------------------------------------------------------**/	
 	window.onload = function () {
-	words  = ['rickroll', 'nyancat', 'orly', 'feelsbadman', 'joebiden',
+	var words  = ['rickroll', 'nyancat', 'orly', 'feelsbadman', 'joebiden',
 			 'rick_sanchez', 'trump'];
-	var letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','u','r','t','u','v','w','x','y','z',];
-	guesses = 7;
-
+	var letters = ['a','b','c','d','e','f','g','h','i','j','k',
+					'l','m','n','o','p','q','u','r','t','u','v',
+					'w','x','y','z'];
+	var word = words[Math.floor(Math.random() * words.length)];
+	var answerArray = [];
+		for (var i = 0; i < word.length; i++) {
+    		answerArray[i] = "_";
+		}
+	var remainingLetters = word.length;
 
     //elements and set them to variables 
+    while (remainingLetters > 0) {
 
-	var guessesLeft = document.getElementById("guessesLeft");
-	var hint = document.getElementById("hint");
-	var reset = document.getElementById("reset");
-	
-	//this function builds an unordered list of buttons
+    	//document.getElementById("ba").addEventListener("click", myFunction);
 
-	 var buttons = function () {
-    myButtons = document.getElementById('letterButtons');
-    lettersList = document.createElement('ul');
+		//function myFunction() {
+    	//document.getElementById("guessesLeft").innerHTML = "YOU CLICKED ME!";
+	}
 
-    for (var i = 0; i < letters.length; i++) {
-      lettersList = 'letters';
-      list = document.createElement('li');
-      list.id = 'letter';
-      list.innerHTML = letters[i];
-      check();
-      myButtons.appendChild(lettersList);
-      lettersList.appendChild(list);
-    }
-  }
+    	//update answerArray and output 
+
+
+	}
+
+
+
 
     
-}
 
 //-----------------------------------------------------------------------------//
 //start the game, let the computer choose the word 
