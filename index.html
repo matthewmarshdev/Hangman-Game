@@ -29,7 +29,7 @@
 	            <section class="sectionL ">
 			        <h2>Show Me What You Got!</h2>
 			        <div class='DisplayMeme'></div>
-              <div id="CorrectGuess"></div>
+              <div id="CorrectGuess "></div>
 		        </section>
 		    </div>
 
@@ -40,62 +40,48 @@
             	<section class="sectionR ">
             		<div class="row ">
 
+
             			<div class="col-sm-12 ">
 		         			<h2>Start Here</h2>
-		         			
-
-      						  <div class="hangman-controls ">
-        							<button class="btn1 btn-primary new ">
+      						  <div>
+        							<button class="btn1 btn-primary new" id="newgame">
  				  					New Game
 									</button>
-									<button class="btn1 btn-warning reset ">Reset
+									<button class="btn1 btn-warning reset" id="reset">Reset
 									</button>
-									<button class="btn1 btn-danger new ">
+									<button class="btn1 btn-danger new" id="hint">
  				  					Need a Hint?
 									</button>
+
 							  </div>
 						</div>
 
-						<div class="row " id="selector "></div>
-						<div id="alphabet-keypad " class="col-sm-12 ">
-								<div class="letter-button ">A</div>
-       							<div class="letter-button ">B</div>
-       							<div class="letter-button ">C</div>
-      							<div class="letter-button ">D</div>
-       							<div class="letter-button ">E</div>
-      							<div class="letter-button ">F</div>
-      							<div class="letter-button ">G</div>
-     							  <div class="letter-button ">H</div>
-       							<div class="letter-button ">I</div>
-      							<div class="letter-button ">J</div>
-      							<div class="letter-button ">K</div>
-      							<div class="letter-button ">L</div>
-      							<div class="letter-button ">M</div>
-       							<div class="letter-button ">N</div>
-       							<div class="letter-button ">O</div>
-       							<div class="letter-button ">P</div>
-        						<div class="letter-button ">Q</div>
-       							<div class="letter-button ">R</div>
-        						<div class="letter-button ">S</div>
-       							<div class="letter-button ">T</div>
-        						<div class="letter-button ">U</div>
-        						<div class="letter-button ">V</div>
-        						<div class="letter-button ">W</div>
-       							<div class="letter-button ">X</div>
-     							<div class="letter-button ">Y</div>
-    							<div class="letter-button ">Z</div>
-						</div>	  
+
+
+						<div class="col-sm-12">
+							<p id="guessesLeft"></p>
 						</div>
 
 
+
+
+						<div class="col-sm-12"></div>
+							<p id="letterButtons"></p>
+						</div>
+
+                  
 						<div class="row ">
 						<div class="col-sm-12 ">
 								<div id="letter-graveyard ">
-        						<img class="img-responsive" id="graveimg" src="assets/images/gravestone.jpg ">
-        								<h2> Letter Graveyard </h2>
+        						<img class="img-responsive " id="graveimg " src="assets/images/confused.jpg ">
+        						<h2 id="room "> U dont Kno?! </h2>
       							</div>
       					</div>
-      					</div>	
+      					</div>
+
+
+
+
 					</div>
 	           	</section>
 			</div>

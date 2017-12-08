@@ -1,20 +1,37 @@
 
 //--------------------------------------------------------------------------------**/	
+	window.onload = function () {
 	words  = ['rickroll', 'nyancat', 'orly', 'feelsbadman', 'joebiden',
 			 'rick_sanchez', 'trump'];
-	letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','u','r','t','u','v','w','x','y','z',];
+	var letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','u','r','t','u','v','w','x','y','z',];
 	guesses = 7;
-	messages = {
-		win: 'Prepare for MEME! Nice win bruh',
-		lose: 'No meme for u bruh. google it',
-		guessed: 'Already did that one. You ok?',
-		valid: 'Pick a letter. Just dont pick Z.',
-	};
 
 
+    //elements and set them to variables 
+
+	var guessesLeft = document.getElementById("guessesLeft");
+	var hint = document.getElementById("hint");
+	var reset = document.getElementById("reset");
+	
+	//this function builds an unordered list of buttons
+
+	 var buttons = function () {
+    myButtons = document.getElementById('letterButtons');
+    lettersList = document.createElement('ul');
+
+    for (var i = 0; i < letters.length; i++) {
+      lettersList = 'letters';
+      list = document.createElement('li');
+      list.id = 'letter';
+      list.innerHTML = letters[i];
+      check();
+      myButtons.appendChild(lettersList);
+      lettersList.appendChild(list);
+    }
+  }
 
     
-
+}
 
 //-----------------------------------------------------------------------------//
 //start the game, let the computer choose the word 
