@@ -19,13 +19,12 @@
     var count = 0;
 	var answerArray = [];
 
-
+    //this is the function for starting the game. it selects the word,
+    //joins the empty array with the word length and 
 	function startGame(){
-
         for (var i = 0; i < word.length; i++) {
     		answerArray[i] = "_";
 		}
-
         set=answerArray.join(" ");
         document.getElementById("hiddenWord").innerHTML = set;
     }
