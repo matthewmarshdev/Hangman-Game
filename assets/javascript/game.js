@@ -97,9 +97,11 @@ function livesLeft(lives) {
 
 //This function resets the game when the reset button is clicked
 function reset() {
+    dispVal = [];
     var answerArray = [];
     var set = [];
     var lives = 5;
+    document.getElementById("hiddenWord").innerHTML = dispVal;
 }
 
 
