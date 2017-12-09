@@ -8,22 +8,15 @@
 			 'ricksanchez', 'trump'];
     var hints = ["never gonna give you up", "inspiration for nyanborghini", 
         "the most-curious owl", "always feels the worst", "best vice-p on earth", 
-        "alcoholic scientist grandpa", "orange ape, wrote art of the deal.",
-        
-       ];
-
-	//var letters = ['a','b','c','d','e','f','g','h','i','j','k',
-	//				'l','m','n','o','p','q','u','r','t','u','v',
-	//				'w','x','y','z'];
+        "alcoholic scientist grandpa", "orange ape, wrote art of the deal.",];
 
     //this array chooses a random word from above
 	var word = wordArray[Math.floor(Math.random() * wordArray.length)];
 
     //place to set global variables
-
     var set = [];                              
     var count = 0;
-    var lives ;                           // Lives
+                                
 	var answerArray = [];
     var remainingLetters = word.length;
     var getHint = document.getElementById("hint");
@@ -59,18 +52,17 @@
     	document.getElementById("hiddenWord").innerHTML = dispVal;
     }
 
-    //this function is for selecting the letter, and either assigning it to the 
+    //this function is for selecting the letter, and either 
+    //assigning it to the 
     //'correct' array, or assigning it to the incorrect guess array 
     
     document.onkeyup = function(event){
     	var userGuess = event.key;
-    	console.log(typeof userGuess);
-
-    	if (word.indexOf(userGuess) > -1){
+        if (word.indexOf(userGuess) > -1){
     		for(i=0; i < answerArray.length; i++){
     			if(answerArray[i].letterVal == userGuess){
     				answerArray[i].guessed = true;
-    			}
+                }
     		}
        	}
     	displayWord();
@@ -78,27 +70,6 @@
 
     
    
-
-
-
-
-    /**function letter(){
-       var letter = document.getElementById("letter").value;
-            console.log(letter);
-        if(letter.length > 0){
-           for (var j = 0; j < randomWord.length; j++){
-               if (randomWord[j]=== letter){
-                answerArray[j] = letter; 
-                }
-            }
-            count++
-            document.getElementById("counter").innerHTML = "No of clicks" + count;
-            document.getElementById("CorrectGuess").innerHTML = answerArray.join(" ")
-        }
-        if(count>5){
-            document.getElementById("room").innerHTML = "Sryssssly.You Lose.??";
-        }
-    }
 
     //this shows the amount of lives left, and displays it. if var 'lives' gets
     //below 1, displays game over. if letter counter plus remaining spaces equals
@@ -113,17 +84,21 @@
             showLives.innerHTML = "You Win!";
           }
         }
-    } 
+    }
+
 
 	//This function resets the game when the reset button is clicked
 	//tried query celector, other style of 'onclick', and getdocbyid
-    /**document.querySelector('#hint').addEventListener("click",function() {
-    correct.parentNode.removeChild(correct);
-    letters.parentNode.removeChild(letters);
+    function reset() {
+    correct.parentNode.removeChild(wrongWord);
+    letters.parentNode.removeChild(hiddenWord);
     showClue.innerHTML = "";
-    play();
+    startGame();
 
-    });
+    };
+
+
+
     //This function is for showing a hint. it aligns with the index of the chosen word,
     /**and binds to it. 
     hint.onclick = function(){
