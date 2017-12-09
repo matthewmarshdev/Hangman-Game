@@ -20,7 +20,8 @@
 	var word = wordArray[Math.floor(Math.random() * wordArray.length)];
 
     //place to set global variables
-    var set;                              
+
+    var set = [];                              
     var count = 0;
     var lives ;                           // Lives
 	var answerArray = [];
@@ -29,17 +30,59 @@
 
     //this is the function for starting the game. it selects the word,
     //joins the empty array with the word length and 
+    //1 create an array and split it
+    //each letter 
 	function startGame(){
         for (var i = 0; i < word.length; i++) {
-    		answerArray[i] = "_";
+    		var makeLetter = {
+    			letterVal: word[i],
+    			guessed: false
+    		}
+    		answerArray.push(makeLetter);
 		}
-        set=answerArray.join(" ");
-        document.getElementById("hiddenWord").innerHTML = set;
+		displayWord();
+    }
+    console.log(word);
+
+    function displayWord(){
+    	set = [];
+    	for (j = 0; j < answerArray.length; j++){
+    	
+    		if(answerArray[j].guessed === true){
+    			set.push(answerArray[j].letterVal);
+    		} else {
+    			set.push('_ ');
+    		}
+    	}
+    	var dispVal = set.join("");
+    	
+    	document.getElementById("hiddenWord").innerHTML = dispVal;
     }
 
     //this function is for selecting the letter, and either assigning it to the 
     //'correct' array, or assigning it to the incorrect guess array 
-    function letter(){
+    
+    document.onkeyup = function(event){
+    	var userGuess = event.key;
+    	console.log(typeof userGuess);
+
+    	if (word.indexOf(userGuess) > -1){
+    		for(i=0; i < answerArray.length; i++){
+    			if(answerArray[i].letterVal == userGuess){
+    				answerArray[i].guessed = true;
+    			}
+    		}
+       	}
+    	displayWord();
+    }
+
+    
+   
+
+
+
+
+    /**function letter(){
        var letter = document.getElementById("letter").value;
             console.log(letter);
         if(letter.length > 0){
@@ -53,7 +96,7 @@
             document.getElementById("CorrectGuess").innerHTML = answerArray.join(" ")
         }
         if(count>5){
-            document.getElementById("room").innerHTML = "Sryssssly??";
+            document.getElementById("room").innerHTML = "Sryssssly.You Lose.??";
         }
     }
 
@@ -72,7 +115,15 @@
         }
     } 
 
+	//This function resets the game when the reset button is clicked
+	//tried query celector, other style of 'onclick', and getdocbyid
+    /**document.querySelector('#hint').addEventListener("click",function() {
+    correct.parentNode.removeChild(correct);
+    letters.parentNode.removeChild(letters);
+    showClue.innerHTML = "";
+    play();
 
+    });
     //This function is for showing a hint. it aligns with the index of the chosen word,
     /**and binds to it. 
     hint.onclick = function(){
@@ -81,15 +132,8 @@
         showClue.innerHTML = "Clue: - " +  hint[hintIndex];
     };**/
 
+    //
 
-	//This function resets the game when the reset button is clicked
-    document.getElementById('reset').onclick = function() {
-    correct.parentNode.removeChild(correct);
-    letters.parentNode.removeChild(letters);
-    showClue.innerHTML = "";
-    context.clearRect(0, 0, 400, 400);
-    play();
-    }
 
 	
 
