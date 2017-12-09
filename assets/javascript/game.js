@@ -3,22 +3,28 @@
 
 //place to set global variables
 
-var wordArray = ['rickroll', 'nyancat', 'orly', 'feelsbadman', 'joebiden',
-    'ricksanchez', 'trump'
-];
-var hints = ["never gonna give you up", "inspiration for nyanborghini",
-    "the most-curious owl", "always feels the worst", "best vice-p on earth",
-    "alcoholic scientist grandpa", "orange ape, wrote art of the deal.",
-];
+//create dictionary, object used to search for values, interact with keys, and values
+
+var gameDictionary = {
+    'rickroll': 'never gonna give you up',
+     'nyancat': 'inspiration for nyanborghini',
+     'orly' : 'the most-curious owl',
+     'feelsbadman': 'always feels the worst',
+     'joebiden' : 'always feels the worst',
+     'ricksanchez' : 'alcoholic scientist grandpa',
+     'trump': 'orange ape, wrote art of the deal.'
+};
+
+
 
 //this array chooses a random word from above
-var word = wordArray[Math.floor(Math.random() * wordArray.length)];
-
-//place to set global variables
-var set = [];
+var keyArray = Object.keys(gameDictionary);
+var word = keyArray[Math.floor(Math.random() * keyArray.length)];
+var wordObject = {}; 
+var wordArray = word.split("");
+var wrongGuess = [];
 var lives = 5;
 var count = 0;
-var answerArray = [];
 var remainingLetters = word.length;
 var getHint = document.getElementById("hint");
 
@@ -26,53 +32,52 @@ var getHint = document.getElementById("hint");
 //joins the empty array with the word length and 
 //1 create an array and split it
 //each letter 
-function startGame() {
-    for (var i = 0; i < word.length; i++) {
-        var makeLetter = {
-            letterVal: word[i],
-            guessed: false
-        }
-        answerArray.push(makeLetter);
-    }
+function startGame(){  
+    console.log(word);
+    wordArray.forEach((letter) => { 
+        wordObject[letter] = false;
+    });
+
     displayWord();
 }
-console.log(word);
+
+      
 
 function displayWord() {
-    set = [];
-    for (j = 0; j < answerArray.length; j++) {
 
-        if (answerArray[j].guessed === true) {
-            set.push(answerArray[j].letterVal);
+    var displayVal = '';
+    wordArray.forEach((letter)  => {
+        if(wordObject[letter]){
+            displayVal += letter;
         } else {
-            set.push('_ ');
+            displayVal += '_';
         }
-    }
-    var dispVal = set.join("");
-    console.log(dispVal);
 
-    document.getElementById("hiddenWord").innerHTML = dispVal;
+    });
+
+ console.log(displayVal);
+
+    document.getElementById("hiddenWord").innerHTML = displayVal;
 }
 
 //this function is for selecting the letter, and either 
 //assigning it to the 
 //'correct' array, or assigning it to the incorrect guess array 
 
-document.onkeyup = function(event) {
-    var userGuess = event.key;
-    if (word.indexOf(userGuess) > -1) {
-        for (i = 0; i < answerArray.length; i++) {
-            if (answerArray[i].letterVal == userGuess) {
-                answerArray[i].guessed = true;
-            } else {
-                lives -1;
-            }
-        }
+document.onkeyup = function(event){
+    debugger;
+    if(wordArray.includes(event.key)){
+       wordObject[event.key] = true;
+       displayWord();
+       console.log(event.key);
+    } else {
+        wrongGuess.push([event.key]);
+        lives -= 1;
+        document.getElementById("wrongGuess").innerHTML = wrongGuess.join(' ');
+        document.getElementById("livesLeft").innerHTML = lives;
     }
-    displayWord();
+
 }
-
-
 
 
 //this shows the amount of lives left, and displays it. if var 'lives' gets
@@ -81,7 +86,8 @@ document.onkeyup = function(event) {
 // I need a function that compares the lives left, and if that hits 0 before 
 //the word is guessed, it displays game over
 //if the word is guessed before lives hit 0, display you win!
-function livesLeft(lives) {
+
+function livesLeft(){
     showLives = "You have " + lives + " lives";
     if (lives < 1){
         showLives.innerHTML = "Game Over";
@@ -92,7 +98,7 @@ function livesLeft(lives) {
         }
     }
     document.getElementById("livesLeft").innerHTML = showLives;
-}
+};
 
 
 //This function resets the game when the reset button is clicked
