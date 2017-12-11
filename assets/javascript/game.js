@@ -32,6 +32,8 @@ var getHint = document.getElementById("hint");
 //joins the empty array with the word length and 
 //1 create an array and split it
 //each letter 
+
+
 function startGame(){  
     console.log(word);
     wordArray.forEach((letter) => { 
@@ -48,16 +50,14 @@ function displayWord() {
     var displayVal = '';
     wordArray.forEach((letter)  => {
         if(wordObject[letter]){
-            displayVal += letter;
+            displayVal += " " + letter + " ";
         } else {
-            displayVal += '_';
+            displayVal += ' __ ';
         }
 
     });
-
- console.log(displayVal);
-
-    document.getElementById("hiddenWord").innerHTML = displayVal;
+	console.log(displayVal);
+	document.getElementById("hiddenWord").innerHTML = displayVal;
 }
 
 //this function is for selecting the letter, and either 
@@ -65,7 +65,6 @@ function displayWord() {
 //'correct' array, or assigning it to the incorrect guess array 
 
 document.onkeyup = function(event){
-    debugger;
     if(wordArray.includes(event.key)){
        wordObject[event.key] = true;
        displayWord();
@@ -77,37 +76,41 @@ document.onkeyup = function(event){
         document.getElementById("livesLeft").innerHTML = lives;
     }
 
+
 }
 
 
-//this shows the amount of lives left, and displays it. if var 'lives' gets
-//below 1, displays game over. if letter counter plus remaining spaces equals
-//guesses, you win is displayed!
-// I need a function that compares the lives left, and if that hits 0 before 
-//the word is guessed, it displays game over
-//if the word is guessed before lives hit 0, display you win!
+/**this shows the amount of lives left, and displays it. if var 'lives' gets
+below 1, displays game over. if letter counter plus remaining spaces equals
+guesses, you win is displayed!
+I need a function that compares the lives left, and if that hits 0 before 
+the word is guessed, it displays game over
+if the word is guessed before lives hit 0, display you win!**/
 
-function livesLeft(){
-    showLives = "You have " + lives + " lives";
+function livesLeft(lives){
+
     if (lives < 1){
-        showLives.innerHTML = "Game Over";
+       document.getElementById("winOrLose").innerHTML = "You Lose"; 
     }
-    for (var i = 0; i < guesses.length; i++) {
-        if (counter + space === guesses.length) {
-            showLives.innerHTML = "You Win!";
+    for (var i = 0; i < wordArray.length; i++) {
+        if (wordArray.length > 1) {
+            winOrLose.innerHTML = "You Win!";
+            reset();
         }
     }
-    document.getElementById("livesLeft").innerHTML = showLives;
+    
 };
 
 
 //This function resets the game when the reset button is clicked
 function reset() {
-    dispVal = [];
+
+	var wordObject = [];
+    var dispVal = [];
     var answerArray = [];
-    var set = [];
+    var wrongGuess = []
     var lives = 5;
-    document.getElementById("hiddenWord").innerHTML = dispVal;
+    document.getElementById("hiddenWord").innerHTML = displayVal;
 }
 
 
@@ -151,11 +154,6 @@ hint.onclick = function(){
 //meme and music
 // If there are no more questions, stop the function.
 // Determine which key was pressed, make it lowercase, and set it to the userInput variable.
-
 //this should be an entire code block for each word
-
-
-
 // If they guess the correct answer, increase and update score, alert them they got it right.
-
 // If wrong, alert them they are wrong.
